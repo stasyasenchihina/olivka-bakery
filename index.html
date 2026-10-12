@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Оливка: пекарня-кофейня в Санкт-Петербурге</title>
+<meta name="description" content="Свежая выпечка и кофе каждый день у метро Ладожская. Предзаказ навынос за пару минут.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:title" content="Оливка. Кофе · Булочки · Любовь">
+<meta property="og:description" content="Пекарня-кофейня у метро Ладожская. Свежая выпечка, 100% арабика, предзаказ навынос.">
+<meta property="og:image" content="img/5qyt.jpg">
+<link rel="icon" href="img/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"CafeOrCoffeeShop","name":"Оливка","address":{"@type":"PostalAddress","streetAddress":"Индустриальный проспект, 10к1, лит.Б","addressLocality":"Санкт-Петербург"},"openingHours":["Mo-Sa 08:00-20:00","Su 10:00-20:00"],"sameAs":["https://t.me/olivka_cafe_spb"]}</script>
+<style>
+:root{--bg:#F7F5EC;--ink:#33361a;--olive:#6D7A31;--dark:#4d5722;--sage:#C2C5B2;--yellow:#E4DA45;--yellow-h:#d8cd2c;--muted:#5a5e33;--gold:#737430;--err:#b3392f}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Manrope,system-ui,sans-serif}
+a{color:var(--olive)}a:hover{color:var(--dark)}
+.serif{font-family:'Cormorant Garamond',serif}
+header{position:sticky;top:0;z-index:10;background:rgba(247,245,236,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--sage)}
+.hw{max-width:1200px;margin:0 auto;padding:6px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px}
+.hw img{display:block;height:84px;width:auto;mix-blend-mode:multiply}
+nav{display:flex;align-items:center;gap:22px;font-size:14px;font-weight:500}
+nav a{text-decoration:none;color:var(--ink)}
+.btn{display:inline-block;background:var(--yellow);color:var(--ink)!important;text-decoration:none;font-weight:700;border-radius:999px;transition:background .2s}
+.btn:hover{background:var(--yellow-h)}
+nav .btn{padding:9px 16px;font-weight:500}
+.hero{max-width:1200px;margin:0 auto;padding:40px 24px 56px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:40px;align-items:center}
+.eyebrow{margin:0 0 14px;font-size:13px;letter-spacing:.18em;color:var(--gold);font-weight:600}
+h1{margin:0;font:500 clamp(44px,7vw,84px)/1.02 'Cormorant Garamond',serif;color:var(--dark)}
+.lead{margin:22px 0 0;font-size:18px;line-height:1.6;max-width:30em}
+.cta{margin-top:30px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.cta .btn{padding:16px 28px;font-size:16px}
+.link{color:var(--dark);font-weight:600;text-decoration:none;border-bottom:1px solid var(--olive);padding-bottom:2px}
+.hours{margin:26px 0 0;font-size:14px;color:var(--muted)}
+.frame{position:relative;aspect-ratio:4/5;border-radius:200px 200px 16px 16px;overflow:hidden;background:var(--sage)}
+.slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity .5s}
+.slide.on{opacity:1}
+.arr{position:absolute;width:44px;height:44px;border-radius:50%;border:0;background:rgba(247,245,236,.94);color:var(--dark);font-size:20px;cursor:pointer}
+.arr:hover{background:#fff}
+#sp{left:12px;bottom:16px}#sn{right:12px;bottom:16px}
+.dots{display:flex;justify-content:center;gap:8px;margin-top:14px}
+.dot{width:8px;height:8px;border-radius:4px;border:0;padding:0;cursor:pointer;background:var(--sage);transition:all .3s}
+.dot.on{width:24px;background:var(--olive)}
+#about{background:var(--sage)}
+.aw{max-width:1200px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px}
+h2{margin:0;font:500 clamp(36px,5vw,54px)/1.05 'Cormorant Garamond',serif}
+.quote{margin:18px 0 0;font:italic 500 22px/1.4 'Cormorant Garamond',serif;color:var(--dark)}
+.aw .txt{font-size:17px;line-height:1.7}.aw .txt p{margin:0 0 16px}.aw .txt p:last-child{margin:0}
+#menu{max-width:1200px;margin:0 auto;padding:80px 24px 40px}
+#menu h2{color:var(--dark);margin-bottom:8px}
+.note{margin:0 0 44px;color:var(--muted)}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,340px),1fr));gap:56px}
+h3{margin:0 0 6px;font:600 28px 'Cormorant Garamond',serif;color:var(--gold)}
+.row{display:flex;align-items:baseline;gap:10px;padding:13px 0;border-bottom:1px dotted #a9ad8f}
+.nm{font-weight:600}.vol{font-size:13px;color:var(--muted)}.pr{margin-left:auto;font-weight:700;white-space:nowrap}
+.gal-h{margin:64px 0 20px}
+.gal-w{position:relative}
+.gal{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;-webkit-overflow-scrolling:touch;margin:0 -24px;padding:0 24px}
+.gal::-webkit-scrollbar{display:none}
+.gal img{flex:none;scroll-snap-align:start;height:clamp(260px,42vw,420px);width:auto;border-radius:14px;display:block}
+#gp,#gn{top:50%;margin-top:-22px}#gp{left:8px}#gn{right:8px}
+.two{margin-top:56px}
+.extras{margin-top:56px;padding:20px 24px;border:1px solid var(--sage);border-radius:14px;display:flex;flex-wrap:wrap;gap:8px 32px;font-size:15px}
+.upd{margin:20px 0 0;font-size:14px;color:var(--muted)}
+#order{background:var(--olive);margin-top:56px}
+.ow{max-width:1000px;margin:0 auto;padding:72px 24px;display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:48px;color:var(--bg)}
+.ow p{margin:18px 0 0;font-size:17px;line-height:1.6}.ow p.s{font-size:14px;opacity:.9}
+.card{background:var(--bg);color:var(--ink);border-radius:16px;padding:28px}
+form{display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:13px;font-weight:600}
+input,textarea{font:16px Manrope,sans-serif;padding:13px 14px;border:1px solid var(--sage);border-radius:10px;background:#fff;min-width:0;color:var(--ink)}
+input[type=date],input[type=time]{padding:12px 14px}
+input:focus,textarea:focus{outline:2px solid var(--olive);outline-offset:1px}
+.bad{border-color:var(--err)}
+.er{color:var(--err);font-weight:500;font-size:13px;min-height:0}
+.dt{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.chips{display:flex;flex-wrap:wrap;gap:8px;max-height:260px;overflow-y:auto;padding:2px}
+.chip{font:600 13px Manrope,sans-serif;padding:9px 14px;border-radius:999px;cursor:pointer;border:1px solid var(--olive);background:transparent;color:var(--dark)}
+.chip[aria-pressed=true]{background:var(--olive);color:var(--bg)}
+.lbl{font-size:13px;font-weight:600;margin-bottom:8px}
+.submit{background:var(--yellow);color:var(--ink);border:0;border-radius:999px;padding:16px;font:700 16px Manrope,sans-serif;cursor:pointer}
+.submit:hover{background:var(--yellow-h)}
+.done{text-align:center;padding:24px 0}
+.done .t{font:500 34px 'Cormorant Garamond',serif;color:var(--dark)}
+.done p{margin:12px 0 0;line-height:1.6;font-size:16px}
+.again{margin-top:20px;background:none;border:1px solid var(--olive);color:var(--dark);border-radius:999px;padding:11px 22px;font:600 14px Manrope,sans-serif;cursor:pointer}
+[hidden]{display:none!important}
+footer{max-width:1200px;margin:0 auto;padding:32px 24px;display:flex;flex-wrap:wrap;gap:16px 32px;justify-content:space-between;font-size:14px;color:var(--muted)}
+footer .l{display:flex;flex-wrap:wrap;align-items:center;gap:12px 20px}
+footer .btn{padding:10px 20px}
+@media(max-width:640px){nav{gap:14px;font-size:13px}.hw img{height:64px}.hw{padding:6px 16px}nav .btn{padding:8px 12px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+</style>
+</head>
+<body>
+<header>
+  <div class="hw">
+    <a href="#top"><img src="img/logo.png" alt="Оливка: кофе, булочки, любовь"></a>
+    <nav>
+      <a href="#about">О нас</a>
+      <a href="#menu">Меню</a>
+      <a href="#order" class="btn">Предзаказ</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div>
+    <p class="eyebrow">Г. САНКТ-ПЕТЕРБУРГ · ИНДУСТРИАЛЬНЫЙ ПРОСПЕКТ, 10К1 · ЛАДОЖСКАЯ</p>
+    <h1>Свежая выпечка и кофе каждый день</h1>
+    <p class="lead">Забегите по пути на работу или в университет. Или закажите заранее, и всё будет готово к вашему приходу.</p>
+    <div class="cta">
+      <a href="#order" class="btn">Сделать предзаказ</a>
+      <a href="#menu" class="link">Смотреть меню</a>
+    </div>
+    <p class="hours">Пн–Сб 8:00–20:00 · Вс 10:00–20:00</p>
+  </div>
+  <div>
+    <div class="frame" id="frame">
+      <img src="img/5qyt.jpg" alt="Фикус у окна в Оливке" class="slide on">
+      <img src="img/aj1b.jpg" alt="Свежие круассаны" loading="lazy" class="slide">
+      <img src="img/ruln.jpg" alt="Уголок зала у окна" loading="lazy" class="slide">
+      <img src="img/rn4a.jpg" alt="Кофемашина за стойкой" loading="lazy" class="slide">
+      <img src="img/hpe4.jpg" alt="Картина с хомяком и кофе" loading="lazy" class="slide">
+      <button class="arr" id="sp" aria-label="Назад">←</button>
+      <button class="arr" id="sn" aria-label="Вперёд">→</button>
+    </div>
+    <div class="dots" id="dots"></div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="aw">
+    <div>
+      <h2 style="color:var(--ink)">Кофе, булочки, любовь</h2>
+      <p class="quote">Приходите с питомцем, мы всегда рады гостям на четырёх лапах.</p>
+    </div>
+    <div class="txt">
+      <p>Оливка — уютная пекарня у метро, где пахнет ванилью и свежим кофе. Тёплый свет, деревянные полки, зелень на подоконниках: сюда можно зайти на десять минут и выйти в хорошем настроении.</p>
+      <p>Выпекаем каждый день и варим кофе из 100% арабики свежей обжарки. Спешим только с подачей, чтобы вы успели на работу, а на вкус времени не жалеем.</p>
+    </div>
+  </div>
+</section>
+
+<section id="menu">
+  <h2>Меню</h2>
+  <p class="note">Цены через дробь соответствуют объёмам 0,2 / 0,3 / 0,4 л.</p>
+  <div class="cols">
+    <div>
+      <h3>Кофейная классика</h3>
+        <div class="row"><span class="nm">Эспрессо</span><span class="pr">110 / 130 ₽</span></div>
+        <div class="row"><span class="nm">Американо</span><span class="pr">130 / 150 / – ₽</span></div>
+        <div class="row"><span class="nm">Капучино</span><span class="pr">140 / 190 / 230 ₽</span></div>
+        <div class="row"><span class="nm">Латте</span><span class="pr">140 / 190 / 230 ₽</span></div>
+        <div class="row"><span class="nm">Флэт уайт</span><span class="pr">180 / 230 / 290 ₽</span></div>
+        <div class="row"><span class="nm">Раф</span><span class="pr">180 / 230 / 290 ₽</span></div>
+        <div class="row"><span class="nm">Бамбл</span><span class="pr">– / 230 / 270 ₽</span></div>
+        <div class="row"><span class="nm">Мокко</span><span class="pr">200 / 250 / 300 ₽</span></div>
+        <div class="row"><span class="nm">Айс латте</span><span class="pr">– / 210 / 240 ₽</span></div>
+        <div class="row"><span class="nm">Эспрессо тоник</span><span class="pr">– / 180 / 210 ₽</span></div>
+        <div class="row"><span class="nm">Тыквенный латте</span><span class="pr">– / 220 / 240 ₽</span></div>
+        <div class="row"><span class="nm">Кленовый раф</span><span class="pr">– / 260 / 300 ₽</span></div>
+    </div>
+    <div>
+      <h3>Некофе</h3>
+        <div class="row"><span class="nm">Чай чёрный / зелёный</span><span class="vol">0,3</span><span class="pr">60 ₽</span></div>
+        <div class="row"><span class="nm">Чай ягодный</span><span class="pr">190 ₽</span></div>
+        <div class="row"><span class="nm">Чай имбирный</span><span class="pr">190 ₽</span></div>
+        <div class="row"><span class="nm">Фреш</span><span class="pr">250 / 300 / 350 ₽</span></div>
+        <div class="row"><span class="nm">Какао</span><span class="pr">120 / 160 / 200 ₽</span></div>
+        <div class="row"><span class="nm">Горячий шоколад</span><span class="pr">200 / 250 / 300 ₽</span></div>
+        <div class="row"><span class="nm">Молочный коктейль</span><span class="pr">– / 180 / 210 ₽</span></div>
+        <div class="row"><span class="nm">Матча синяя / зелёная</span><span class="pr">130 / 170 / 210 ₽</span></div>
+        <div class="row"><span class="nm">Айс матча</span><span class="pr">– / 210 / 240 ₽</span></div>
+        <div class="row"><span class="nm">Глинтвейн</span><span class="pr">– / 250 / 290 ₽</span></div>
+    </div>
+  </div>
+  <h3 class="gal-h">Из витрины</h3>
+  <div class="gal-w">
+    <div class="gal" id="gal">
+        <img src="img/v1.jpg" alt="Сырники" loading="lazy">
+        <img src="img/v2.jpg" alt="Эклеры с кремом" loading="lazy">
+        <img src="img/v3.jpg" alt="Кольцо с заварным кремом" loading="lazy">
+        <img src="img/v4.jpg" alt="Моти" loading="lazy">
+        <img src="img/v5.jpg" alt="Горячий сэндвич" loading="lazy">
+        <img src="img/v6.jpg" alt="Павлова с малиной" loading="lazy">
+        <img src="img/v7.jpg" alt="Круассаны" loading="lazy">
+        <img src="img/v8.jpg" alt="Красный бархат" loading="lazy">
+    </div>
+    <button class="arr" id="gp" aria-label="Назад">←</button>
+    <button class="arr" id="gn" aria-label="Вперёд">→</button>
+  </div>
+  <div class="cols two">
+    <div>
+      <h3>Десерты</h3>
+        <div class="row"><span class="nm">Трубочка со сгущёнкой</span><span class="pr">75 ₽</span></div>
+        <div class="row"><span class="nm">Картошка</span><span class="pr">35 ₽</span></div>
+        <div class="row"><span class="nm">Кольцо с заварным кремом</span><span class="pr">100 ₽</span></div>
+        <div class="row"><span class="nm">Моти в ассорти</span><span class="pr">150 ₽</span></div>
+        <div class="row"><span class="nm">Чизкейк Нью-Йорк</span><span class="pr">180 ₽</span></div>
+        <div class="row"><span class="nm">Чизкейк маковый</span><span class="pr">180 ₽</span></div>
+        <div class="row"><span class="nm">Чизкейк шоколадный</span><span class="pr">190 ₽</span></div>
+        <div class="row"><span class="nm">Медовик</span><span class="pr">200 ₽</span></div>
+        <div class="row"><span class="nm">Прага</span><span class="pr">215 ₽</span></div>
+        <div class="row"><span class="nm">Наполеон</span><span class="pr">190 ₽</span></div>
+        <div class="row"><span class="nm">Красный бархат</span><span class="pr">195 ₽</span></div>
+        <div class="row"><span class="nm">Меренговый рулет с фисташкой</span><span class="pr">250 ₽</span></div>
+        <div class="row"><span class="nm">Виланка</span><span class="pr">90 ₽</span></div>
+        <div class="row"><span class="nm">Донат с шоколадом</span><span class="pr">135 ₽</span></div>
+        <div class="row"><span class="nm">Донат с маршмеллоу</span><span class="pr">135 ₽</span></div>
+        <div class="row"><span class="nm">Сырники</span><span class="pr">60 ₽</span></div>
+        <div class="row"><span class="nm">Кейк-попс</span><span class="pr">100 ₽</span></div>
+        <div class="row"><span class="nm">Булочка со сливками</span><span class="pr">110 ₽</span></div>
+        <div class="row"><span class="nm">Сочень</span><span class="pr">110 ₽</span></div>
+        <div class="row"><span class="nm">Буше</span><span class="pr">135 ₽</span></div>
+        <div class="row"><span class="nm">Эклер сырный</span><span class="pr">190 ₽</span></div>
+        <div class="row"><span class="nm">Кекс лимон-мак</span><span class="pr">100 ₽</span></div>
+        <div class="row"><span class="nm">Кекс морковный</span><span class="pr">90 ₽</span></div>
+        <div class="row"><span class="nm">Кукис</span><span class="pr">85 ₽</span></div>
+        <div class="row"><span class="nm">Павлова</span><span class="pr">250 ₽</span></div>
+    </div>
+    <div>
+      <h3>Выпечка</h3>
+        <div class="row"><span class="nm">Слойка ветчина-сыр</span><span class="pr">95 ₽</span></div>
+        <div class="row"><span class="nm">Слойка кура-грибы</span><span class="pr">120 ₽</span></div>
+        <div class="row"><span class="nm">Круассан сыр</span><span class="pr">85 ₽</span></div>
+        <div class="row"><span class="nm">Круассан шоколад</span><span class="pr">85 ₽</span></div>
+        <div class="row"><span class="nm">Круассан клубничный</span><span class="pr">85 ₽</span></div>
+        <div class="row"><span class="nm">Круассан классический</span><span class="pr">80 ₽</span></div>
+        <div class="row"><span class="nm">Улитка с маком</span><span class="pr">80 ₽</span></div>
+        <div class="row"><span class="nm">Улитка с корицей</span><span class="pr">80 ₽</span></div>
+        <div class="row"><span class="nm">Сосиски в тесте</span><span class="pr">90 ₽</span></div>
+        <div class="row"><span class="nm">Пирог курица-сыр</span><span class="pr">140 ₽</span></div>
+        <div class="row"><span class="nm">Пирог капуста</span><span class="pr">80 ₽</span></div>
+        <div class="row"><span class="nm">Пирог красная рыба</span><span class="pr">150 ₽</span></div>
+        <div class="row"><span class="nm">Сэндвич</span><span class="pr">180 ₽</span></div>
+        <div class="row"><span class="nm">Хлеб юбиляр</span><span class="pr">110 ₽</span></div>
+        <div class="row"><span class="nm">Хлеб маг с семечками</span><span class="pr">112 ₽</span></div>
+        <div class="row"><span class="nm">Хлеб чиабатта</span><span class="pr">90 ₽</span></div>
+    </div>
+  </div>
+  <div class="extras">
+    <span><b>Альтернативное молоко</b> (кокосовое, миндальное, безлактозное) +70 ₽</span><span><b>Сироп</b> +30 ₽</span><span><b>Мороженое</b> 50 ₽ за шарик</span>
+  </div>
+  <p class="upd">Ассортимент витрины обновляется каждый день.</p>
+</section>
+
+<section id="order">
+  <div class="ow">
+    <div>
+      <h2>Предзаказ</h2>
+      <p>Выберите, что хотите, и время. Мы соберём заказ к вашему приходу, останется только забрать и пойти дальше.</p>
+      <p class="s">Забрать можно на Индустриальном пр., 10к1, лит.Б</p>
+    </div>
+    <div class="card">
+      <div class="done" id="done" hidden>
+        <div class="t">Заявка принята</div>
+        <p id="doneText"></p>
+        <button class="again" id="again" type="button">Оформить ещё один</button>
+      </div>
+      <form id="form" novalidate>
+        <label>Имя
+          <input name="name" autocomplete="name">
+          <span class="er" data-e="name"></span></label>
+        <label>Телефон
+          <input name="phone" inputmode="tel" autocomplete="tel" placeholder="+7 900 000-00-00">
+          <span class="er" data-e="phone"></span></label>
+        <div class="dt">
+          <label>Дата<input type="date" name="date"></label>
+          <label>Время<input type="time" name="time"></label>
+        </div>
+        <span class="er" data-e="date"></span>
+        <div>
+          <div class="lbl">Что взять</div>
+          <div class="chips" id="chips">
+          <button type="button" class="chip" aria-pressed="false">Эспрессо</button>
+          <button type="button" class="chip" aria-pressed="false">Американо</button>
+          <button type="button" class="chip" aria-pressed="false">Капучино</button>
+          <button type="button" class="chip" aria-pressed="false">Латте</button>
+          <button type="button" class="chip" aria-pressed="false">Флэт уайт</button>
+          <button type="button" class="chip" aria-pressed="false">Раф</button>
+          <button type="button" class="chip" aria-pressed="false">Бамбл</button>
+          <button type="button" class="chip" aria-pressed="false">Мокко</button>
+          <button type="button" class="chip" aria-pressed="false">Айс латте</button>
+          <button type="button" class="chip" aria-pressed="false">Эспрессо тоник</button>
+          <button type="button" class="chip" aria-pressed="false">Тыквенный латте</button>
+          <button type="button" class="chip" aria-pressed="false">Кленовый раф</button>
+          <button type="button" class="chip" aria-pressed="false">Чай чёрный / зелёный</button>
+          <button type="button" class="chip" aria-pressed="false">Чай ягодный</button>
+          <button type="button" class="chip" aria-pressed="false">Чай имбирный</button>
+          <button type="button" class="chip" aria-pressed="false">Фреш</button>
+          <button type="button" class="chip" aria-pressed="false">Какао</button>
+          <button type="button" class="chip" aria-pressed="false">Горячий шоколад</button>
+          <button type="button" class="chip" aria-pressed="false">Молочный коктейль</button>
+          <button type="button" class="chip" aria-pressed="false">Матча синяя / зелёная</button>
+          <button type="button" class="chip" aria-pressed="false">Айс матча</button>
+          <button type="button" class="chip" aria-pressed="false">Глинтвейн</button>
+          <button type="button" class="chip" aria-pressed="false">Трубочка со сгущёнкой</button>
+          <button type="button" class="chip" aria-pressed="false">Картошка</button>
+          <button type="button" class="chip" aria-pressed="false">Кольцо с заварным кремом</button>
+          <button type="button" class="chip" aria-pressed="false">Моти в ассорти</button>
+          <button type="button" class="chip" aria-pressed="false">Чизкейк Нью-Йорк</button>
+          <button type="button" class="chip" aria-pressed="false">Чизкейк маковый</button>
+          <button type="button" class="chip" aria-pressed="false">Чизкейк шоколадный</button>
+          <button type="button" class="chip" aria-pressed="false">Медовик</button>
+          <button type="button" class="chip" aria-pressed="false">Прага</button>
+          <button type="button" class="chip" aria-pressed="false">Наполеон</button>
+          <button type="button" class="chip" aria-pressed="false">Красный бархат</button>
+          <button type="button" class="chip" aria-pressed="false">Меренговый рулет с фисташкой</button>
+          <button type="button" class="chip" aria-pressed="false">Виланка</button>
+          <button type="button" class="chip" aria-pressed="false">Донат с шоколадом</button>
+          <button type="button" class="chip" aria-pressed="false">Донат с маршмеллоу</button>
+          <button type="button" class="chip" aria-pressed="false">Сырники</button>
+          <button type="button" class="chip" aria-pressed="false">Кейк-попс</button>
+          <button type="button" class="chip" aria-pressed="false">Булочка со сливками</button>
+          <button type="button" class="chip" aria-pressed="false">Сочень</button>
+          <button type="button" class="chip" aria-pressed="false">Буше</button>
+          <button type="button" class="chip" aria-pressed="false">Эклер сырный</button>
+          <button type="button" class="chip" aria-pressed="false">Кекс лимон-мак</button>
+          <button type="button" class="chip" aria-pressed="false">Кекс морковный</button>
+          <button type="button" class="chip" aria-pressed="false">Кукис</button>
+          <button type="button" class="chip" aria-pressed="false">Павлова</button>
+          <button type="button" class="chip" aria-pressed="false">Слойка ветчина-сыр</button>
+          <button type="button" class="chip" aria-pressed="false">Слойка кура-грибы</button>
+          <button type="button" class="chip" aria-pressed="false">Круассан сыр</button>
+          <button type="button" class="chip" aria-pressed="false">Круассан шоколад</button>
+          <button type="button" class="chip" aria-pressed="false">Круассан клубничный</button>
+          <button type="button" class="chip" aria-pressed="false">Круассан классический</button>
+          <button type="button" class="chip" aria-pressed="false">Улитка с маком</button>
+          <button type="button" class="chip" aria-pressed="false">Улитка с корицей</button>
+          <button type="button" class="chip" aria-pressed="false">Сосиски в тесте</button>
+          <button type="button" class="chip" aria-pressed="false">Пирог курица-сыр</button>
+          <button type="button" class="chip" aria-pressed="false">Пирог капуста</button>
+          <button type="button" class="chip" aria-pressed="false">Пирог красная рыба</button>
+          <button type="button" class="chip" aria-pressed="false">Сэндвич</button>
+          <button type="button" class="chip" aria-pressed="false">Хлеб юбиляр</button>
+          <button type="button" class="chip" aria-pressed="false">Хлеб маг с семечками</button>
+          <button type="button" class="chip" aria-pressed="false">Хлеб чиабатта</button>
+          </div>
+        </div>
+        <label>Комментарий
+          <textarea rows="2" name="comment" placeholder="Например: кофе на безлактозном молоке"></textarea></label>
+        <button type="submit" class="submit">Отправить заказ</button>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <span>© Оливка · Санкт-Петербург, Индустриальный пр., 10к1, лит.Б</span>
+  <span class="l"><a class="btn" href="https://yandex.ru/map-widget/v1/?z=12&ol=biz&oid=223695541460" target="_blank" rel="noopener">Как добраться</a><a href="https://t.me/olivka_cafe_spb">Telegram</a><a href="https://instagram.com/olivka_cafespb">Instagram</a></span>
+</footer>
+
+<script>
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  // слайдер
+  var slides=[].slice.call(document.querySelectorAll('.slide')),dotsEl=$('#dots'),cur=0,timer;
+  var dots=slides.map(function(_,k){var b=document.createElement('button');b.className='dot';b.setAttribute('aria-label','Фото '+(k+1));b.onclick=function(){go(k);restart()};dotsEl.appendChild(b);return b});
+  function go(k){cur=(k+slides.length)%slides.length;slides.forEach(function(s,i){s.classList.toggle('on',i===cur)});dots.forEach(function(d,i){d.classList.toggle('on',i===cur)})}
+  function restart(){clearInterval(timer);timer=setInterval(function(){go(cur+1)},5000)}
+  $('#sp').onclick=function(){go(cur-1);restart()};$('#sn').onclick=function(){go(cur+1);restart()};
+  go(0);restart();
+  // галерея
+  var gal=$('#gal');
+  function by(d){gal.scrollBy({left:d*Math.max(300,gal.clientWidth*.7),behavior:'smooth'})}
+  $('#gp').onclick=function(){by(-1)};$('#gn').onclick=function(){by(1)};
+  // чипы
+  document.querySelectorAll('.chip').forEach(function(c){c.onclick=function(){c.setAttribute('aria-pressed',c.getAttribute('aria-pressed')==='true'?'false':'true')}});
+  // форма
+  var form=$('#form'),done=$('#done');
+  var today=new Date();today.setMinutes(today.getMinutes()-today.getTimezoneOffset());
+  form.date.min=today.toISOString().slice(0,10);
+  function val(){
+    var e={};
+    if(form.name.value.trim().length<2)e.name='Укажите имя';
+    if(form.phone.value.replace(/\D/g,'').length<10)e.phone='Введите телефон полностью';
+    if(!form.date.value||!form.time.value)e.date='Выберите дату и время';
+    return e;
+  }
+  form.onsubmit=function(ev){
+    ev.preventDefault();
+    var e=val();
+    document.querySelectorAll('[data-e]').forEach(function(s){s.textContent=e[s.dataset.e]||''});
+    ['name','phone'].forEach(function(k){form[k].classList.toggle('bad',!!e[k])});
+    form.date.classList.toggle('bad',!!e.date);form.time.classList.toggle('bad',!!e.date);
+    if(Object.keys(e).length)return;
+    var items=[].slice.call(document.querySelectorAll('.chip[aria-pressed=true]')).map(function(c){return c.textContent});
+    var payload={name:form.name.value.trim(),phone:form.phone.value.trim(),date:form.date.value,time:form.time.value,items:items,comment:form.comment.value.trim()};
+    // Здесь будет отправка в AmoCRM (вебхук) и Telegram Bot API: payload
+    window.__olivkaOrder=payload;
+    $('#doneText').textContent='Спасибо, '+payload.name+'! Ждём вас '+payload.date.split('-').reverse().join('.')+' к '+payload.time+'.';
+    form.hidden=true;done.hidden=false;
+  };
+  $('#again').onclick=function(){form.reset();document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false')});form.hidden=false;done.hidden=true};
+})();
+</script>
+</body>
+</html>
