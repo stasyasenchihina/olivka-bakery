@@ -347,6 +347,8 @@ footer .btn{padding:10px 20px}
         </div>
         <label>Комментарий
           <textarea rows="2" name="comment" placeholder="Например: кофе на безлактозном молоке"></textarea></label>
+        <input name="website" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <span class="er" id="sendErr" role="alert"></span>
         <button type="submit" class="submit">Отправить заказ</button>
       </form>
     </div>
@@ -361,6 +363,8 @@ footer .btn{padding:10px 20px}
 
 <script>
 (function(){
+  // Адрес Cloudflare Worker (см. worker/README.md)
+  var ORDER_ENDPOINT='';
   var $=function(s){return document.querySelector(s)};
   // слайдер
   var slides=[].slice.call(document.querySelectorAll('.slide')),dotsEl=$('#dots'),cur=0,timer;
@@ -394,11 +398,19 @@ footer .btn{padding:10px 20px}
     form.date.classList.toggle('bad',!!e.date);form.time.classList.toggle('bad',!!e.date);
     if(Object.keys(e).length)return;
     var items=[].slice.call(document.querySelectorAll('.chip[aria-pressed=true]')).map(function(c){return c.textContent});
-    var payload={name:form.name.value.trim(),phone:form.phone.value.trim(),date:form.date.value,time:form.time.value,items:items,comment:form.comment.value.trim()};
-    // Здесь будет отправка в AmoCRM (вебхук) и Telegram Bot API: payload
-    window.__olivkaOrder=payload;
-    $('#doneText').textContent='Спасибо, '+payload.name+'! Ждём вас '+payload.date.split('-').reverse().join('.')+' к '+payload.time+'.';
-    form.hidden=true;done.hidden=false;
+    var payload={name:form.name.value.trim(),phone:form.phone.value.trim(),date:form.date.value,time:form.time.value,items:items,comment:form.comment.value.trim(),website:form.website.value};
+    var btn=form.querySelector('.submit'),err=$('#sendErr');
+    err.textContent='';
+    if(!ORDER_ENDPOINT){err.textContent='Приём заявок ещё не подключён. Позвоните или напишите нам в Telegram.';return}
+    btn.disabled=true;btn.textContent='Отправляем...';
+    fetch(ORDER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload)})
+      .then(function(r){if(!r.ok)throw new Error(r.status);return r.json()})
+      .then(function(){
+        $('#doneText').textContent='Спасибо, '+payload.name+'! Ждём вас '+payload.date.split('-').reverse().join('.')+' к '+payload.time+'.';
+        form.hidden=true;done.hidden=false;
+      })
+      .catch(function(){err.textContent='Не удалось отправить заявку. Попробуйте ещё раз или напишите нам в Telegram.'})
+      .then(function(){btn.disabled=false;btn.textContent='Отправить заказ'});
   };
   $('#again').onclick=function(){form.reset();document.querySelectorAll('.chip').forEach(function(c){c.setAttribute('aria-pressed','false')});form.hidden=false;done.hidden=true};
 })();

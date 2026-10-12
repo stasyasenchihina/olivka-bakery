@@ -1,0 +1,7 @@
+name = "olivka-orders"
+main = "worker.js"
+compatibility_date = "2024-11-01"
+
+[vars]
+# Адреса сайта через запятую, без слэша в конце. Когда появится домен, добавьте его сюда.
+ALLOWED_ORIGIN = "https://stasyasenchihina.github.io"
